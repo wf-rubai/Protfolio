@@ -1,5 +1,7 @@
 body{
-    background-color: rgb(9, 0, 15);
+    /* background-color: rgb(9, 0, 15); */
+    background-image: linear-gradient(to right, rgb(31, 0, 51), rgb(9, 0, 15), rgb(9, 0, 15), rgb(31, 0, 51));
+    overflow-x: hidden;
 }
 .about-me{
     height: 300px;
@@ -23,7 +25,14 @@ p{
 }
 .main-img{
     width: 100%;
-    scale: 1;
+    scale: 1.02;
+
+    animation: main-img-animation linear forwards;
+    animation-timeline: view();
+    animation-range: exit;
+}
+@keyframes main-img-animation{
+    75%, 100%{opacity: 0; scale: 3;}
 }
 .my-img{
     position: absolute;
@@ -42,6 +51,15 @@ p{
     width: 500px;
     left: 900px;
     margin-right: 100px;
+}
+.pro-img{
+    animation: pro-img-animation linear forwards;
+    animation-timeline: view();
+    animation-range: enter;
+}
+@keyframes pro-img-animation{
+    0% {opacity: 0; scale: .8;}
+    30%, 100% {opacity: 1; scale: 1;}
 }
 .pro-texts2{
     position: relative;
@@ -127,7 +145,7 @@ p{
 }
 .socials{
     position: relative;
-    top: 1600;
+    top: 1600px;
     height: 100px;
     width: 100%;
     display: grid;
@@ -143,4 +161,24 @@ p{
 .fa-brands:hover{
     text-shadow: 0 0 10px #fff;
     color: #fff;
+}
+.contact-me{
+    position: relative;
+    width: 100%;
+    background-color: #d1d1d1;
+    top: 1600px;
+    left: -10px;
+    padding-top: 30px;
+    padding-left: 110px;
+    padding-bottom: 30px;
+}
+.contact-font, .h5-contact-font{
+    font-family: Arial, Helvetica, sans-serif;
+}
+.h5-contact-font{
+    margin-top: 5px; 
+    font-size: 12;
+}
+.h5-contact-font i{
+    margin-right: 10px; /* Add spacing between icon and text */
 }
