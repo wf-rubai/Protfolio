@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        html,body {
+            height: 100%;
+            margin: 0;
+        }
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: Arial, Helvetica, sans-serif;
+            background-image: url('https://wallpaperaccess.com/full/2641074.gif');
+            background-size: 100% 100%;
+            color: #ffffff;
+        }
+
+        .container {
+            box-shadow: 0 0 10px;
+            width: 500px;
+            padding: 20px;
+            border-radius: 10px;
+            background-color: #7e7e7e21;
+            border: 1.5px solid #ffffff82;
+            backdrop-filter: blur(5px);
+        }
+        .inp{
+            display: flex;
+            flex-direction: column;
+            margin: 10px;
+        }
+        button{
+
+            width: calc(100% - 20px);
+            background: #ffffff3d;
+            color: white;
+            padding: 10px 0;
+            border: 1.5px solid #ffffff;
+            border-radius: 5px;
+            margin: 10px;
+            backdrop-filter: blur(5px);
+            transition: .3s;
+        }
+        button:hover{
+            background: #362989;
+            border: 1.5px solid #362989;
+            cursor: pointer;
+            transition: .3s;
+        }
+        input ,[type="text"] [type='password']{
+            padding: 5px;
+            border-radius: 5px;
+            background-color: #ffffff3d;
+            border: 1.5px solid #ffffff82;
+            backdrop-filter: blur(5px);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h2 style="text-align: center;">Login Information</h2>
+        <div style="display: flex;">
+            <div class="inp" style="width: 50%;">
+                <label for="fst-name">First Name</label>
+                <input type="text" name="fst-name" id="">
+            </div>
+            <div class="inp" style="width: 50%;">
+                <label for="lst-name">Last Name</label>
+                <input type="text" name="lst-name" id="">
+            </div>
+        </div>
+        <div class="inp" style="margin-top: 0;">
+            <label for="email">Email</label>
+            <input type="email" name="email" id="">
+        </div>
+        <div class="inp">
+            <label for="pass1">Password</label>
+            <input type="password" name="pass1" id="pass1">
+        </div>
+        <div class="inp">
+            <label for="pass2">Confirm Password</label>
+            <input type="password" name="pass2" id="pass2">
+        </div>
+        <div class="inp">
+            <label for="">Gender</label>
+            <div style="display: flex;">
+                <input type="radio" name="gen" id="">
+                <label for="gen">Male</label>
+            </div>
+            <div style="display: flex;">
+                <input type="radio" name="gen" id="">
+                <label for="gen">Female</label>
+            </div>
+            <div style="display: flex;">
+                <input type="radio" name="gen" id="">
+                <label for="gen">Walmart bag</label>
+            </div>
+        </div>
+        <div class="inp">
+            <label for="">Interests</label>
+            <div style="display: flex;">
+                <input type="checkbox" name="gen" id="">
+                <label for="gen">Driving</label>
+            </div>
+            <div style="display: flex;">
+                <input type="checkbox" name="gen" id="">
+                <label for="gen">Drinking</label>
+            </div>
+            <div style="display: flex;">
+                <input type="checkbox" name="gen" id="">
+                <label for="gen">Killing</label>
+            </div>
+        </div>
+        <button type="submit" onclick="clicked()">Submit</button>
+    </div>
+
+    <script>
+        function clicked(){
+            const p1 = document.getElementById("pass1").value;
+            const p2 = document.getElementById("pass2").value;
+            console.log(p1);
+            console.log(p2);
+            if(p1 === p2){
+                alert("Password matched");
+            }else{
+                alert("Password didn't matched");
+            }
+        }
+    </script>
+</body>
+
+</html>

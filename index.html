@@ -1,70 +1,447 @@
 <html>
-    <head>
-        <title>Rubai's Protfolio</title>
-        <link rel="stylesheet" href="style.css">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    </head>
 
-    <body>
-        <div class="header">
+<head>
+    <title>Rubai's Protfolio</title>
+    <!-- <link rel="stylesheet" href="style.css"> -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+        integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- old CSS -->
+    <style>
+        body {
+            /* background-color: rgb(9, 0, 15); */
+            background-image: linear-gradient(to right, rgb(31, 0, 51), rgb(9, 0, 15), rgb(9, 0, 15), rgb(31, 0, 51));
+            overflow-x: hidden;
+            margin: 0;
+        }
+
+        .about-me {
+            height: 300px;
+            width: 600px;
+        }
+
+        .name-of-me {
+            font-size: 60px;
+            color: rgb(255, 106, 25);
+            font-family: Arial, Helvetica, sans-serif;
+            margin: 0;
+            margin-bottom: 10;
+            position: absolute;
+            top: 0;
+            left: 240px;
+            width: max-content;
+        }
+
+        .my-img {
+            position: absolute;
+            width: 270px;
+            top: 0;
+            left: 0;
+            border-radius: 20% 0% 20% 0%;
+        }
+
+        .my_profile p {
+            color: antiquewhite;
+            position: absolute;
+            font-family: Arial, Helvetica, sans-serif;
+            top: 55px;
+            left: 280px;
+            width: 750px;
+        }
+
+        .contact {
+            position: absolute;
+            top: 220px;
+            left: 280px;
+            font-size: 12;
+            font-family: Arial, Helvetica, sans-serif;
+            display: inline-block;
+            text-decoration: none;
+            border: 1px solid #fff;
+            padding: 0px 34px;
+            background: transparent;
+            color: aliceblue;
+            cursor: pointer;
+            transition: .5s;
+            border-radius: 0 20px 0 20px;
+        }
+
+        .main-img {
+            width: 100%;
+            scale: 1.0;
+
+            animation: main-img-animation linear forwards;
+            animation-timeline: view();
+            animation-range: exit;
+        }
+
+        @keyframes main-img-animation {
+
+            75%,
+            100% {
+                opacity: 0;
+                scale: 3;
+            }
+        }
+
+        .pro-img {
+            /* position: absolute; */
+            width: 35%;
+            /* left: 100px; */
+            animation: pro-img-animation linear forwards;
+            animation-timeline: view();
+            animation-range: enter;
+        }
+
+        @keyframes pro-img-animation {
+            0% {
+                opacity: 0;
+                scale: .8;
+            }
+
+            30%,
+            100% {
+                opacity: 1;
+                scale: 1;
+            }
+        }
+
+        .title2 {
+            color: antiquewhite;
+            position: relative;
+            z-index: 2;
+            width: 100%;
+            text-align: center;
+            font-family: Arial, Helvetica, sans-serif;
+            /* top: 850px; */
+        }
+
+        .project-dis {
+            color: antiquewhite;
+            /* position: absolute; */
+            font-family: Arial, Helvetica, sans-serif;
+            width: 100%;
+            top: 50px;
+            text-align: justify;
+            /* left: 700px; */
+        }
+
+        .see1 {
+            color: rgb(162, 162, 162);
+            position: relative;
+            font-family: Arial, Helvetica, sans-serif;
+            width: 700px;
+            /* top: 290px; */
+            /* left: 700px; */
+            transition: .5s;
+        }
+
+        .see1:hover {
+            color: rgb(248, 181, 94);
+        }
+
+        .title3 {
+            color: antiquewhite;
+            position: relative;
+            font-family: Arial, Helvetica, sans-serif;
+            width: 300px;
+            top: 0px;
+            /* left: 700px; */
+        }
+
+        .pro_texts {
+            width: 50%;
+            height: 100%;
+        }
+
+        .contact:hover {
+            border: 1px solid rgb(201, 92, 28);
+            background: rgb(201, 92, 28);
+            transition: .5s;
+        }
+
+        .project-div {
+            position: relative;
+            width: 100%;
+            margin: 50px 0;
+        }
+
+        .project {
+            height: 360px;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+        }
+
+        .socials {
+            position: relative;
+            height: 100px;
+            width: 100%;
+            display: grid;
+            grid-template-columns: repeat(3, auto);
+            gap: 60px;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .fa-brands {
+            width: 28px;
+            color: #d1d1d1;
+        }
+
+        .fa-brands:hover {
+            text-shadow: 0 0 10px #fff;
+            color: #fff;
+        }
+
+        .contact-me {
+            position: relative;
+            width: calc(100% - 110px);
+            background-color: #d1d1d1;
+            left: 0;
+            bottom: 0;
+            padding-top: 30px;
+            padding-left: 110px;
+            padding-right: 0;
+            padding-bottom: 30px;
+        }
+
+        .contact-font,
+        .h5-contact-font {
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        .h5-contact-font {
+            margin-top: 5px;
+            font-size: 12;
+        }
+
+        .h5-contact-font i {
+            margin-right: 10px;
+        }
+    </style>
+
+    <!-- new CSS -->
+    <style>
+        .nav_btn {
+            position: absolute;
+            z-index: 10;
+            background: none;
+            border: 0;
+            padding: 10px;
+            right: 0;
+            top: 0;
+        }
+
+        .fa-bars:hover,
+        .fa-xmark:hover {
+            cursor: pointer;
+            text-shadow: 0 0 10px #fff;
+        }
+
+        .nav_pot {
+            display: none;
+            flex-direction: column;
+            position: absolute;
+            color: white;
+            background: #ffffff30;
+            z-index: 20;
+            width: 200px;
+            right: 0;
+            margin: 10px;
+            padding: 15px;
+            border: 1.5px solid #999;
+            border-radius: 10px;
+            backdrop-filter: blur(5px);
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        .nav_pot a {
+            margin: 5px 10px;
+            padding: 5px;
+            border: 1px solid #86868600;
+            text-decoration: none;
+            color: #fff;
+        }
+
+        .nav_pot a:hover {
+            background-color: #999;
+            background: #ffffff00;
+            border-radius: 5px;
+            border: 1px solid #868686;
+            backdrop-filter: blur(5px);
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="header">
+        <div class="my_profile">
+            <button type="button" class="nav_btn" id="nav_btn" onclick="nav_switch_1()"><i class="fa fa-bars"
+                    style="color: #fff; font-size: xx-large;"></i></button>
+            <div class="nav_pot" id="nav_pot">
+                <button type="button" class="nav_btn" onclick="nav_switch_2()"><i class="fa fa-xmark"
+                        style="color: #fff; font-size: large;"></i></button>
+                <a href="home.html">Home</a>
+                <a href="service.html">Services</a>
+                <a href="home.html">Contact</a>
+                <a href="login.html">Login</a>
+                <a href="about.html">About</a>
+            </div>
             <!-- <img class="main-img" src="https://w0.peakpx.com/wallpaper/648/1010/HD-wallpaper-black-green-leaves-black-aesthetic.jpg" alt="green leaf"> -->
-            <img class="main-img" src="https://www.hdwallpapers.in/download/wet_brown_leaves_hd_dark_aesthetic-HD.jpg" alt="green leaf">
-            <img class="my-img" src="D49B7FB6-6B67-4555-91D3-8B7BA94D3938 2.jpg" alt="green leaf">
-            <h1 class="name-of-me">WASHIO FERDOUS RUBAI</h1>
-            <div class="about-me">        
-                <p>As a dedicated Computer Science and Engineering (CSE) student, you possess a multifaceted skill set that extends far beyond the traditional bounds of academia. Your deep understanding of various programming languages illuminates your passion for technology and problem-solving. With a repertoire that includes languages such as Python, Java, C++, and more, you navigate the intricate world of software development with finesse and confidence. Your proficiency in these languages not only showcases your technical prowess but also underscores your adaptability in tackling diverse challenges within the realm of computer science. As you continue your journey as a CSE student, your expertise in programming languages serves as a solid foundation upon which you construct innovative solutions and pave the way for transformative advancements in technology.</p>
-                <div class="contact">
-                    <h3>CONTACT ME</h3>
-                </div>
-            </div>
-            <h2 class="title2">PROJECTS EXPERIENCE AND DETAILS</h2>
-            <div class="project-div">
-                <div class="project1">
-                    <img class="ss1 pro-img" src="Screenshot 2023-11-05 at 6.46.14 PM.png" alt="green leaf">
-                    <div class=" pro-texts">
-                        <h4 class="title3">POJECT 1</h4>
-                        <p class="project-dis">Imagine a dynamic "Library Management System" powered by Java, meticulously crafted to revolutionize the way libraries operate. This system serves as a comprehensive tool for librarians, offering them unparalleled efficiency in managing diverse resources ranging from books to multimedia materials. With an array of features such as user authentication, inventory management, and borrowing tracking, librarians can effortlessly catalog, update, and track the availability of library items. Meanwhile, patrons benefit from a user-friendly interface that enables them to browse the library's collection, reserve items, and review their borrowing history with ease. Leveraging the power of JavaFX for intuitive graphical user interfaces and employing robust object-oriented programming principles, this project promises to elevate the library experience for both staff and visitors alike.</p>
-                        <a href="https://www.youtube.com/watch?v=wCz_CfcbCbg" target="_blank"><h5 class="see1" >SEE DETAILS ></h5></a>
+            <!-- <img class="main-img" src="https://www.hdwallpapers.in/download/wet_brown_leaves_hd_dark_aesthetic-HD.jpg" alt="green leaf"> -->
+            <img class="main-img" src="wet_brown_leaves_hd_dark_aesthetic.jpg" alt="green leaf">
+
+            <div style="position: absolute; top: 50%; left: 50%; width: 1030px; transform: translate(-50%, -50%);">
+                <img class="my-img" src="D49B7FB6-6B67-4555-91D3-8B7BA94D3938 2.jpg" alt="green leaf">
+                <h1 class="name-of-me">WASHIO FERDOUS <span style="color: #ffffff;">RUBAI</span></h1>
+                <div class="about-me">
+                    <p>As a dedicated Computer Science and Engineering (CSE) student, you possess a multifaceted skill set that
+                        extends far beyond the traditional bounds of academia. Your deep understanding of various programming
+                        languages illuminates your passion for technology and problem-solving. With a repertoire that includes
+                        languages such as Python, Java, C++, and more, you navigate the intricate world of software development
+                        with finesse and confidence. Your proficiency in these languages not only showcases your technical
+                        prowess but also underscores your adaptability in tackling diverse challenges within the realm of
+                        computer science.</p>
+                    <div class="contact" onclick="scrollToBottom()">
+                        <h3>CONTACT ME</h3>
                     </div>
-                </div>
-                <div class="project2">
-                    <img class="ss2 pro-img" src="Screenshot 2023-10-18 at 9.08.18 PM.png" alt="green leaf">
-                    <div class=" pro-texts2">
-                        <h4 class="title3">POJECT 2</h4>
-                        <p class="project-dis">Imagine a dynamic "Library Management System" powered by Java, meticulously crafted to revolutionize the way libraries operate. This system serves as a comprehensive tool for librarians, offering them unparalleled efficiency in managing diverse resources ranging from books to multimedia materials. With an array of features such as user authentication, inventory management, and borrowing tracking, librarians can effortlessly catalog, update, and track the availability of library items. Meanwhile, patrons benefit from a user-friendly interface that enables them to browse the library's collection, reserve items, and review their borrowing history with ease. Leveraging the power of JavaFX for intuitive graphical user interfaces and employing robust object-oriented programming principles, this project promises to elevate the library experience for both staff and visitors alike.</p>
-                        <a href="https://www.youtube.com/watch?v=wCz_CfcbCbg" target="_blank"><h5 class="see1" >SEE DETAILS ></h5></a>
-                    </div>
-                </div>
-                <div class="project3">
-                    <img class="ss1 pro-img" src="Screenshot 2023-10-18 at 9.12.30 PM.png" alt="green leaf">
-                    <div class=" pro-texts">
-                        <h4 class="title3">POJECT 3</h4>
-                        <p class="project-dis">Imagine a dynamic "Library Management System" powered by Java, meticulously crafted to revolutionize the way libraries operate. This system serves as a comprehensive tool for librarians, offering them unparalleled efficiency in managing diverse resources ranging from books to multimedia materials. With an array of features such as user authentication, inventory management, and borrowing tracking, librarians can effortlessly catalog, update, and track the availability of library items. Meanwhile, patrons benefit from a user-friendly interface that enables them to browse the library's collection, reserve items, and review their borrowing history with ease. Leveraging the power of JavaFX for intuitive graphical user interfaces and employing robust object-oriented programming principles, this project promises to elevate the library experience for both staff and visitors alike.</p>
-                        <a href="https://www.youtube.com/watch?v=wCz_CfcbCbg" target="_blank"><h5 class="see1" >SEE DETAILS ></h5></a>
-                    </div>
-                </div>
-                <div class="project4">
-                    <img class="ss2 pro-img" src="Screenshot 2023-11-05 at 6.47.16 PM.png" alt="green leaf">
-                    <div class=" pro-texts2">
-                        <h4 class="title3">POJECT 4</h4>
-                        <p class="project-dis">Imagine a dynamic "Library Management System" powered by Java, meticulously crafted to revolutionize the way libraries operate. This system serves as a comprehensive tool for librarians, offering them unparalleled efficiency in managing diverse resources ranging from books to multimedia materials. With an array of features such as user authentication, inventory management, and borrowing tracking, librarians can effortlessly catalog, update, and track the availability of library items. Meanwhile, patrons benefit from a user-friendly interface that enables them to browse the library's collection, reserve items, and review their borrowing history with ease. Leveraging the power of JavaFX for intuitive graphical user interfaces and employing robust object-oriented programming principles, this project promises to elevate the library experience for both staff and visitors alike.</p>
-                        <a href="https://www.youtube.com/watch?v=wCz_CfcbCbg" target="_blank"><h5 class="see1" >SEE DETAILS ></h5></a>
-                    </div>
-                </div>
-            </div>
-            <div class="socials">
-                <a href="https://www.facebook.com/wf.rubai.10" target="_blank"><i class="fa-brands fa-facebook fa-2x"></i></a>
-                <a href="https://www.instagram.com/washio_ferdous_rubai/" target="_blank"><i class="fa-brands fa-instagram fa-2x"></i></a>
-                <a href="https://github.com/wf-rubai" target="_blank"><i class="fa-brands fa-github fa-2x"></i></a>
-            </div>
-            <div>
-                <div class="contact-me">
-                    <h3 class="contact-font">Contact</h3>
-                    <h5 class="contact-font h5-contact-font"><i class="fas fa-phone"></i> Phone : +88 01912-653657</h5>
-                    <h5 class="contact-font h5-contact-font"><i class="fas fa-envelope"></i> E-mail : rubai4483302@gmail.com</h5>
-                    <h5 class="contact-font h5-contact-font"><i class="fab fa-telegram"></i> Telegram : +88 01912-653657</h5>
                 </div>
             </div>
         </div>
-    </body>
+
+        <h2 class="title2">PROJECTS EXPERIENCE AND DETAILS</h2>
+        <div style="width: 100%; min-height: 100%;">
+
+            <div class="project-div">
+                <div class="project">
+                    <img class="ss1 pro-img"
+                        src="https://i.pinimg.com/736x/bc/13/ae/bc13aeda287f8b812ee4b48c64209ae4.jpg" alt="green leaf">
+                    <div class="pro_texts">
+                        <h4 class="title3">POJECT 1</h4>
+                        <p class="project-dis">Imagine a dynamic "Library Management System" powered by Java, meticulously
+                            crafted to revolutionize the way libraries operate. This system serves as a comprehensive tool
+                            for librarians, offering them unparalleled efficiency in managing diverse resources ranging from
+                            books to multimedia materials. With an array of features such as user authentication, inventory
+                            management, and borrowing tracking, librarians can effortlessly catalog, update, and track the
+                            availability of library items. Meanwhile, patrons benefit from a user-friendly interface that
+                            enables them to browse the library's collection, reserve items, and review their borrowing
+                            history with ease. Leveraging the power of JavaFX for intuitive graphical user interfaces and
+                            employing robust object-oriented programming principles, this project promises to elevate the
+                            library experience for both staff and visitors alike.</p>
+                        <a href="https://www.youtube.com/watch?v=wCz_CfcbCbg" target="_blank">
+                            <h5 class="see1">SEE DETAILS ></h5>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="project-div">
+                <div class="project">
+                    <div class="pro_texts">
+                        <h4 class="title3">POJECT 1</h4>
+                        <p class="project-dis">Imagine a dynamic "Library Management System" powered by Java, meticulously
+                            crafted to revolutionize the way libraries operate. This system serves as a comprehensive tool
+                            for librarians, offering them unparalleled efficiency in managing diverse resources ranging from
+                            books to multimedia materials. With an array of features such as user authentication, inventory
+                            management, and borrowing tracking, librarians can effortlessly catalog, update, and track the
+                            availability of library items. Meanwhile, patrons benefit from a user-friendly interface that
+                            enables them to browse the library's collection, reserve items, and review their borrowing
+                            history with ease. Leveraging the power of JavaFX for intuitive graphical user interfaces and
+                            employing robust object-oriented programming principles, this project promises to elevate the
+                            library experience for both staff and visitors alike.</p>
+                        <a href="https://www.youtube.com/watch?v=wCz_CfcbCbg" target="_blank">
+                            <h5 class="see1">SEE DETAILS ></h5>
+                        </a>
+                    </div>
+                    <img class="ss1 pro-img"
+                        src="https://img.freepik.com/premium-vector/business-ui-dashboard-purple-background-admin-dashboard-ui-design-project-management-template_29008-69.jpg"
+                        alt="green leaf">
+                </div>
+            </div>
+
+            <div class="project-div">
+                <div class="project">
+                    <img class="ss1 pro-img"
+                        src="https://res.cloudinary.com/upwork-cloud/image/upload/c_scale,w_1000/v1684922133/catalog/1661111599211421696/nvth2z48hargylokzrtt.jpg"
+                        alt="green leaf">
+                    <div class="pro_texts">
+                        <h4 class="title3">POJECT 1</h4>
+                        <p class="project-dis">Imagine a dynamic "Library Management System" powered by Java, meticulously
+                            crafted to revolutionize the way libraries operate. This system serves as a comprehensive tool
+                            for librarians, offering them unparalleled efficiency in managing diverse resources ranging from
+                            books to multimedia materials. With an array of features such as user authentication, inventory
+                            management, and borrowing tracking, librarians can effortlessly catalog, update, and track the
+                            availability of library items. Meanwhile, patrons benefit from a user-friendly interface that
+                            enables them to browse the library's collection, reserve items, and review their borrowing
+                            history with ease. Leveraging the power of JavaFX for intuitive graphical user interfaces and
+                            employing robust object-oriented programming principles, this project promises to elevate the
+                            library experience for both staff and visitors alike.</p>
+                        <a href="https://www.youtube.com/watch?v=wCz_CfcbCbg" target="_blank">
+                            <h5 class="see1">SEE DETAILS ></h5>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="project-div">
+                <div class="project">
+                    <div class="pro_texts">
+                        <h4 class="title3">POJECT 1</h4>
+                        <p class="project-dis">Imagine a dynamic "Library Management System" powered by Java, meticulously
+                            crafted to revolutionize the way libraries operate. This system serves as a comprehensive tool
+                            for librarians, offering them unparalleled efficiency in managing diverse resources ranging from
+                            books to multimedia materials. With an array of features such as user authentication, inventory
+                            management, and borrowing tracking, librarians can effortlessly catalog, update, and track the
+                            availability of library items. Meanwhile, patrons benefit from a user-friendly interface that
+                            enables them to browse the library's collection, reserve items, and review their borrowing
+                            history with ease. Leveraging the power of JavaFX for intuitive graphical user interfaces and
+                            employing robust object-oriented programming principles, this project promises to elevate the
+                            library experience for both staff and visitors alike.</p>
+                        <a href="https://www.youtube.com/watch?v=wCz_CfcbCbg" target="_blank">
+                            <h5 class="see1">SEE DETAILS ></h5>
+                        </a>
+                    </div>
+                    <img class="ss1 pro-img"
+                        src="https://miro.medium.com/v2/resize:fit:12140/1*iycvfqzq5IBPRfmnLFQ8Vw.png" alt="green leaf">
+                </div>
+            </div>
+
+        </div>
+        <div class="socials">
+            <a href="https://www.facebook.com/wf.rubai.10" target="_blank"><i class="fa-brands fa-facebook fa-2x"></i></a>
+            <a href="https://www.instagram.com/washio_ferdous_rubai/" target="_blank"><i class="fa-brands fa-instagram fa-2x"></i></a>
+            <a href="https://github.com/wf-rubai" target="_blank"><i class="fa-brands fa-github fa-2x"></i></a>
+        </div>
+        <div>
+            <div class="contact-me">
+                <h3 class="contact-font">Contact</h3>
+                <h5 class="contact-font h5-contact-font"><i class="fas fa-phone"></i> Phone : +88 01912-653657</h5>
+                <h5 class="contact-font h5-contact-font"><i class="fas fa-envelope"></i> E-mail : rubai4483302@gmail.com</h5>
+                <h5 class="contact-font h5-contact-font"><i class="fab fa-telegram"></i> Telegram : +88 01912-653657</h5>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function nav_switch_1() {
+            document.getElementById("nav_btn").style.display = 'none';
+            document.getElementById("nav_pot").style.display = 'flex';
+        }
+        function nav_switch_2() {
+            document.getElementById("nav_btn").style.display = 'block';
+            document.getElementById("nav_pot").style.display = 'none';
+        }
+        function scrollToBottom() {
+            window.scrollTo({
+                top: document.body.scrollHeight,
+                behavior: 'smooth' // This provides a smooth scrolling effect
+            });
+        }
+    </script>
+</body>
+
 </html>
